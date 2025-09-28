@@ -6,16 +6,17 @@ import (
 )
 
 // modernize packageのテスト
-// go run golang.org/x/tools/gopls/internal/analysis/modernize/cmd/modernize@latest -test ./...
+// go run golang.org/x/tools/gopls/internal/analysis/modernize/cmd/modernize@latest -test ./... => 指摘事項を教えてくれる
+// go run golang.org/x/tools/gopls/internal/analysis/modernize/cmd/modernize@latest -fix -test ./... => 上書き
 
 // interface -> any
-func printValue(v interface{}) {
+func printValue(v any) {
 	fmt.Println("value:", v)
 }
 
 // for i := 0; i < 10; i++ -> for range
 func printLoop(max int) {
-	for i := 0; i < max; i++ {
+	for i := range max {
 		fmt.Println(i)
 	}
 }
@@ -23,11 +24,9 @@ func printLoop(max int) {
 // 最新の1.25まで追従している
 func goroutineAndWaitGroup() {
 	var wg sync.WaitGroup
-	wg.Add(1)
-	go func() {
-		defer wg.Done()
+	wg.Go(func() {
 		fmt.Println("Goroutine is running")
-	}()
+	})
 	wg.Wait()
 }
 
