@@ -9,4 +9,6 @@
 
 ### 記載内容
 - workshopの内容。
+  - [github](https://github.com/newmo-oss/gocon25-workshop/blob/main/WORKSHOP.md)
+  - [github-io](https://newmo-oss.github.io/gocon25-workshop/)
   - 2025は黒魔術の話。ある程度全てやりたい。
