@@ -8,6 +8,11 @@ import (
 // reflect package
 // 自身を鏡に反射(reflection)するようにランタイムの型や値を見ることができる
 // かつそれを変更することもできる
+
+// 補足それ以外にも
+// データベースの情報を読み込んで struct にマッピングする（ORM）
+// Struct Tag と go generate を使って、コード生成する
+// 使い方は多いな
 func main() {
 
 	// 基本的な使い方(型の取得)
