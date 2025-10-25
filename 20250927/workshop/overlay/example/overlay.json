@@ -1,0 +1,5 @@
+{
+  "Replace": {
+    "/opt/homebrew/Cellar/go/1.25.0/libexec/src/time/time.go": "./overlay/example/time/time.go"
+  }
+}
